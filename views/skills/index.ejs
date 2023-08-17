@@ -1,23 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express To-Do</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-    <a href="/">Home Page</a>
-    <h1>Skills</h1>
+<%- include('../partials/header') %>
+
+<h3>Skills as of <%= time %></h3>
+
     <ul>
         <% skills.forEach(function(s) { %>
-            <li>
-                <a href="/skills/<%= s.id %>"><%= s.skill %></a>
-                    -
-                    <!-- edit this part? vvv -->
-                <%= t.done ? 'done' : 'not done' %>
+            <li class="skill-item">
+                <div class="skill-name">
+                    <a href="/skills/<%= s.id %>"><%= s.skill %></a>
+                </div>
+
+                <div class="skill-language">
+                    <%= s.language %>
+                </div>
+                <div class="opinion">
+                    <%= s.opinion %>
+                </div>
             </li>
         <% }); %>
     </ul>
-</body>
-</html>
+
+<a href="/skills/new">Add New Skill</a>
+
+<%- include('../partials/footer') %>

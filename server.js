@@ -5,6 +5,7 @@ var path = require('path');
 //this is middleware
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override');
 //
 
 //dedicated modules that require routers
@@ -18,11 +19,17 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(function(req, res, next) {
+  res.locals.time = new Date().toLocaleTimeString();
+  next();
+})
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 //The first arg is the "starts with" path
 //The paths within the route modules are appended to the starts with paths

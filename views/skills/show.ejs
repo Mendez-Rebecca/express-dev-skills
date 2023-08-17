@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express To-Do</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
+<%- include('../partials/header') %>
+
     <a href="/">Home</a>
     |
-    <a href="/todos">To-Dos</a>
-    <h3><%= todo.todo %></h3>
-    <h3>Complete: <%= todo.done ? 'Yes' : 'No' %></h3>
-</body>
-</html>
+    <a href="/skills">Current Languages</a>
+    <br>
+    <h3 class="skill-name"><%= skill.skill %></h3>
+
+<%- include('../partials/footer') %>
