@@ -34,3 +34,13 @@ a {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.delete-form {
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #61194D;
+  color: white;
+  border-radius: 5px;
+}

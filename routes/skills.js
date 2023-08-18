@@ -13,6 +13,8 @@ router.get('/:id', skillsCtrl.show);
 router.get('/:id/edit', skillsCtrl.edit);
 //POST /skills
 router.post('/', skillsCtrl.create);
+//route for DELTE
+router.delete('/:id', skillsCtrl.delete);
 
 
 
