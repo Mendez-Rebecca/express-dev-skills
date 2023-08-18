@@ -5,5 +5,7 @@
     <a href="/skills">Current Languages</a>
     <br>
     <h3 class="skill-name"><%= skill.skill %></h3>
+    <h3>Mastered: <%= skill.mastered ? 'Yes' : 'No' %></h3>
+    <a href="/skills/<%= skill.id %>/edit"></a>
 
 <%- include('../partials/footer') %>

@@ -7,8 +7,15 @@ module.exports = {
     new: newSkill,
     create,
     edit,
-    delete: deleteSkill
+    delete: deleteSkill,
+    update
 };
+
+function update(req, res) {
+    req.body.mastered = !!req.body.mastered;
+    Skill.update(req.params.id, req.body);
+    res.redirect(`todos/${req.params.id}`);
+}
 
 function deleteSkill(req, res) {
     Skill.deleteOne(req.params.id);
